@@ -15,56 +15,103 @@
 
     <h1>Delivery Details</h1>
 
-    <form action="#">
 
+    <form name="deliveryForm" action="#" target="" method="get" autocomplete="off" required>
+
+        <h1 class="h1beta">We are almost done</h1>
         <div class="delivery-container">
-            <div class="billing">
-                <h1 class="h1beta">Billing <br> Adress</h1>
+            <div class="left-col">
 
-                <label class="title" for="name">full name:</label>
-                <input type="text" id="name" name="name" placeholder="John M. Doe">
 
-                <label class="title" for="email"></i>e-mail:</label>
-                <input type="email" id="email" name="email" placeholder="john.doe@mail.com">
+                <label class="title-label" for="name">name:</label>
+                <p class="instruction">required / only letters / more than 3 letters / no spaces</p>
+                <input type="text" id="name" name="name" placeholder="John" pattern="[A-Za-z_]{4,}" required
+                    class="required">
 
-                <label class="title" for="adress"></i>adress:</label>
-                <input type="text" id="adress" name="adress" placeholder="Main Street 30a/12">
 
-                <label class="title" for="city"></i>city:</label>
-                <input type="text" id="city" name="city" placeholder="Toronto">
 
-                <label class="title" for="country"></i>country:</label>
-                <input type="text" id="country" name="country" placeholder="Canada">
+                <label class="title-label" for="delDate"></i>delivery date:</label>
+                <p class="instruction">required / we need at least one day</p>
+                <input type="date" id="delDate" name="delivery" placeholder="12/12/2022" required class="required">
+
+
+
+                <label class="title-label" for="houseNum"></i>house number:</label>
+                <p class="instruction">required / only positive numbers</p>
+                <input type="text" id="houseNum" name="houseNum" placeholder="30" pattern="[0-9_]{0,}" required
+                    class="required">
+
+
+                <label class="title-label" for="payment">payment:</label>
+                <p class="instruction">required</p>
+                <div class="paymentOpt">
+                    <section class="oneLine">
+                        <input type="radio" id="payment" name="payment" value="card" required class="required">
+                        <label for="payment">card</label>
+                    </section>
+                    <section class="oneLine">
+                        <input type="radio" id="payment" name="payment" value="cash" required class="required">
+                        <label for="payment">cash</label>
+                    </section>
+                </div>
+
             </div>
 
-            <div class="payment">
-                <h1 class="h1beta">Payment <br> details</h1>
-
-                <label class="title" for="card-name">name on card:</label>
-                <input type="text" id="card-name" name="card-name" placeholder="John More Doe">
-
-                <label class="title" for="card-number">card number:</label>
-                <input type="text" id="card-number" name="cardnumber" placeholder="1111-2222-3333-4444">
-
-                <label class="title" for="exp-month">exp month:</label>
-                <input type="text" id="exp-month" name="exp-month" placeholder="September">
+            <div class="right-col">
 
 
-                <label class="title" for="expyear">exp year:</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018">
+                <label class="title-label" for="surname"></i>surname:</label>
+                <p class="instruction">required / only letters / more than 4 letters / no spaces</p>
+                <input type="text" id="surname" name="surname" placeholder="Holmes" pattern="[A-Za-z_]{5,}" required
+                    class="required">
 
-                <label class="title" for="cvv">cvv:</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352">
+                <label class="title-label" for="adress"></i>adress:</label>
+                <p class="instruction">required / more than 4 characters</p>
+                <input type="text" id="adress" name="adress" placeholder="Avenue" pattern="[A-Za-z0-9_]{5,}" required
+                    class="required">
+
+                <label class="title-label" for="flatNum"></i>flat number:</label>
+                <p class="instruction">required / only positive numbers</p>
+                <input type="text" id="flatNum" name="flatNum" placeholder="12-21" pattern="^[1-9–]+[-0-9–]*$" required
+                    class="required">
+
+                <label class="title-label" for="gift"></i>choose a gift:</label>
+                <p class="instruction">optional / you can choose 2 items</p>
+                <div class="paymentOpt" id="giftBox">
+                    <section class="oneLine">
+                        <input type="checkbox" class="giftOpt" id="gift" name="gift" value="pack as gift">
+                        <label for="gift">pack as gift</label>
+                    </section>
+
+                    <section class="oneLine">
+                        <input type="checkbox" class="giftOpt" id="gift" name="gift" value="add postcard">
+                        <label for="gift">add postcard</label>
+                    </section>
+
+                    <section class="oneLine">
+                        <input type="checkbox" class="giftOpt" id="gift" name="gift"
+                            value="provide 2% discount to the next time">
+                        <label for="gift">provide 2% discount to the next time</label>
+                    </section>
+
+                    <section class="oneLine">
+                        <input type="checkbox" class="giftOpt" id="gift" name="gift" value="branded pen or pencil">
+                        <label for="gift">branded pen or pencil</label>
+                    </section>
+
+                </div>
             </div>
         </div>
 
 
-        <input type="submit" value="Make order" class="btn">
+        <input type="submit" value="Make order" class="btn-inactive">
 
 
 
     </form>
 
+    <script type="text/JavaScript" src=" https://MomentJS.com/downloads/moment.js"></script>
+    <script src="./delivery_script.js"></script>
 </body>
 
 </html>

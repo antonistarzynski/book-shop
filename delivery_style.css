@@ -4,7 +4,7 @@
 
 }
 
-.billing {
+.left-col {
     display: flex;
     flex-direction: column;
     margin-right: 5rem;
@@ -16,6 +16,67 @@ input {
     background-color: #bdbdbd;
     border: 0.02px solid white;
     margin-bottom: 20px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.025rem;
+}
+
+.inputGood {
+    border: 0.02px solid green;
+}
+
+.inputBad {
+    border: 0.02px solid red;
+}
+
+
+/*
+
+input:invalid {
+    border: 0.5px solid white;
+}
+
+input:focus:invalid {
+    border: 0.5px solid red;
+}
+
+input:focus:valid {
+    border: 0.5px solid green;
+}
+
+*/
+
+
+
+
+
+
+
+
+.valid {
+    border: 0.02px solid red;
+}
+
+
+
+.title-label {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5rem;
+    padding-top: 0.2rem;
+}
+
+.instruction {
+    font-size: 10px;
+    color: white;
+    margin-top: ;
+    margin-bottom: 5px;
+}
+
+
+
+#delDate {
+    color: white;
     appearance: none;
 }
 
@@ -26,19 +87,64 @@ input:focus-visible {
 
 ::placeholder {
     color: white;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 300;
 }
+
 
 label {
-    padding-bottom: 10px;
+    margin-bottom: 0.5rem;
 }
 
-.payment {
+.right-col {
     display: flex;
     flex-direction: column;
 }
 
+.paymentOpt {
+    width: 100%;
+    padding: 1rem 1.5rem 0 1.5rem;
+
+    width: 20rem;
+    border: 0.5px white solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.paymentOpt input {
+    width: 10px;
+    height: 10px;
+    margin-right: 0.75rem;
+    appearance: none;
+    border-radius: 50%;
+    border: 0.5px solid white;
+    transition: 0.1s all linear;
+}
+
+.paymentOpt input:hover {
+    background-color: white;
+
+}
+
+.paymentOpt input:checked {
+    border: 0.5px solid black;
+    background-color: black;
+
+}
+
+
+
+.oneLine {
+    display: flex;
+    align-items: baseline;
+    padding: 0.5rem 0;
+    align-items: flex-start;
+
+
+}
+
 .btn {
-    background-color: rgb(255, 255, 255);
+    background-color: red;
     color: rgb(0, 0, 0);
     border: none;
     height: 70px;
@@ -46,9 +152,27 @@ label {
     font-size: 20px;
     font-weight: 500;
     line-height: 1.5rem;
+    transition: 0.2s all linear;
 }
 
 .btn:hover {
     background-color: black;
     color: white;
+}
+
+
+
+
+
+.btn-inactive {
+    background-color: #bdbdbd;
+    color: white;
+    border: 0.5px white solid;
+    height: 70px;
+    margin-top: 2rem;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5rem;
+    transition: 0.2s all linear;
+
 }

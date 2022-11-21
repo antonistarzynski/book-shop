@@ -93,7 +93,7 @@ for (let i = 0; i < stuff.length; i++) {
     const book = document.createElement('div');
     book.classList.add('book-square');
 
-    //////
+    ////// top section of the book
     const top = document.createElement('div');
     top.classList.add('top');
 
@@ -110,13 +110,13 @@ for (let i = 0; i < stuff.length; i++) {
     book.append(top);
 
 
-    /////
+    ///// image section
     const image = document.createElement('img');
     image.src = stuff[i].imageLink;
     image.classList.add('image');
     book.append(image);
 
-    ////
+    //// bottom section 
     const bottom = document.createElement('div')
     bottom.classList.add('bottom');
 
@@ -125,14 +125,47 @@ for (let i = 0; i < stuff.length; i++) {
     price.classList.add('price');
     bottom.append(price);
 
-    const info = document.createElement('p');
+    /* bottom / info / */
+    const info = document.createElement('button');
     info.append("info");
     info.classList.add('info');
     bottom.append(info);
 
-    const buy = document.createElement('p');
+    const infoBox = document.createElement('section');
+    const textBook = document.createElement('p');
+    const closeBtn = document.createElement('button');
+
+    closeBtn.innerText = "close"
+    closeBtn.classList.add('closeBtn');
+
+    textBook.classList.add('pInfoBook');
+
+    textBook.innerHTML = `${stuff[i].description}<br><br>`;
+    textBook.append(closeBtn);
+
+    infoBox.append(textBook);
+    infoBox.classList.add('textInfo');
+
+    bottom.append(infoBox);
+
+
+    info.addEventListener("click", (e) => {
+        infoBox.classList.toggle('hidden');
+        let x = e.pageX;
+        let y = e.pageY;
+    })
+
+    closeBtn.addEventListener("click", () => {
+        infoBox.classList.toggle('hidden');
+    })
+
+    //// >>>> if i click somewhere else, also hidden
+    //// >>>> "scroll history" - reset
+
+    const buy = document.createElement('button');
     buy.append("buy");
-    buy.classList.add('info');
+    buy.classList.add('buyBtnStyle');
+    buy.classList.add('buyBtn');
     bottom.append(buy);
 
     book.append(bottom);
@@ -142,6 +175,123 @@ for (let i = 0; i < stuff.length; i++) {
     books.append(book);
     main.append(books);
 }
+
+const buy = document.querySelectorAll(".buyBtn");
+
+const shopBox = document.createElement('div');
+shopBox.classList.add("shopBox");
+
+const boxContainer = document.createElement('section');
+boxContainer.classList.add('boxContainer');
+shopBox.append(boxContainer);
+
+
+
+const boxList = document.createElement('ul');
+
+
+
+
+
+
+
+
+const totalCost = document.createElement('h4');
+let amount = 0;
+//totalCost.append("total cost:" + amount)
+totalCost.innerHTML += `total cost: ${amount} yolo`
+totalCost.classList.add('boxh4');
+boxContainer.append(totalCost);
+
+const totalAmount = document.createElement('h4')
+let itemsAmount = 0;
+totalAmount.append("items:" + itemsAmount);
+totalAmount.classList.add('boxh4')
+boxContainer.append(totalAmount);
+
+const boxh4 = document.createElement('h4')
+boxh4.append("your basket:");
+boxh4.classList.add('boxh4')
+boxContainer.append(boxh4);
+
+const orderBtn = document.createElement("button");
+orderBtn.innerHTML = `<a href="./delivery.html">order</a>`
+orderBtn.classList.add("orderBtn");
+boxContainer.append(orderBtn);
+
+shopBox.classList.toggle("visible");
+main.append(shopBox);
+
+
+
+
+
+
+buy[0].addEventListener("click", () => {
+
+    shopBox.classList.remove("visible");
+
+    /*
+    boxItem.append(`Title: ${stuff[0].title}`);
+    boxItem.append(stuff[0].author);
+    boxItem.append(stuff[0].price);
+*/
+
+    const boxItem = document.createElement('li');
+    boxItem.classList.add("empty");
+
+
+    boxItem.innerHTML +=
+        `<br><br>
+Title:${stuff[0].title}<br>
+Author:${stuff[0].author}<br>
+Price:${stuff[0].price}<br><br>
+`;
+
+
+
+    totalCost.innerText = "";
+    amount += stuff[0].price;
+    totalCost.innerHTML += `total cost: ${amount} $`;
+    totalCost.innerHTML += `<br>`
+
+    totalAmount.innerText = "";
+    itemsAmount++;
+    totalCost.append("books amount: " + itemsAmount)
+
+    const removeBtn = document.createElement("button");
+    removeBtn.append("remove book");
+    removeBtn.classList.add("removeBtn");
+    boxItem.append(removeBtn);
+
+    const listOfBooks = document.querySelector("ul");
+    removeBtn.addEventListener("click", () => {
+        listOfBooks.removeChild(listOfBooks.childNodes[1])
+
+        totalAmount.innerText = "";
+        itemsAmount--;
+        totalCost.append("books amount: " + itemsAmount)
+
+        totalCost.innerText = "";
+        amount -= stuff[0].price;
+        totalCost.innerHTML += `total cost: ${amount} $`;
+        totalCost.innerHTML += `<br>`
+    })
+
+    // var ulElem = document.getElementById('myList');
+
+    //ulElem.removeChild(ulElem.childNodes[i])
+
+
+
+
+    boxList.append(boxItem);
+    boxContainer.append(boxList);
+
+
+})
+
+
 
 
 
