@@ -185,21 +185,12 @@ const boxContainer = document.createElement('section');
 boxContainer.classList.add('boxContainer');
 shopBox.append(boxContainer);
 
-
-
 const boxList = document.createElement('ul');
-
-
-
-
-
-
-
 
 const totalCost = document.createElement('h4');
 let amount = 0;
 //totalCost.append("total cost:" + amount)
-totalCost.innerHTML += `total cost: ${amount} yolo`
+totalCost.innerHTML += `total cost: ${amount}`
 totalCost.classList.add('boxh4');
 boxContainer.append(totalCost);
 
@@ -225,30 +216,23 @@ main.append(shopBox);
 
 
 
+const buys = document.querySelectorAll(".buyBtn");
+
 
 
 buy[0].addEventListener("click", () => {
 
     shopBox.classList.remove("visible");
-
-    /*
-    boxItem.append(`Title: ${stuff[0].title}`);
-    boxItem.append(stuff[0].author);
-    boxItem.append(stuff[0].price);
-*/
-
     const boxItem = document.createElement('li');
     boxItem.classList.add("empty");
 
 
     boxItem.innerHTML +=
         `<br><br>
-Title:${stuff[0].title}<br>
-Author:${stuff[0].author}<br>
-Price:${stuff[0].price}<br><br>
-`;
-
-
+    Title:${stuff[0].title}<br>
+    Author:${stuff[0].author}<br>
+    Price:${stuff[0].price}<br><br>
+    `;
 
     totalCost.innerText = "";
     amount += stuff[0].price;
@@ -266,7 +250,7 @@ Price:${stuff[0].price}<br><br>
 
     const listOfBooks = document.querySelector("ul");
     removeBtn.addEventListener("click", () => {
-        listOfBooks.removeChild(listOfBooks.childNodes[1])
+        listOfBooks.removeChild(listOfBooks.firstElementChild)
 
         totalAmount.innerText = "";
         itemsAmount--;
@@ -278,18 +262,436 @@ Price:${stuff[0].price}<br><br>
         totalCost.innerHTML += `<br>`
     })
 
-    // var ulElem = document.getElementById('myList');
+    boxList.append(boxItem);
+    boxContainer.append(boxList);
+})
 
-    //ulElem.removeChild(ulElem.childNodes[i])
 
 
 
+
+buy[1].addEventListener("click", () => {
+
+    shopBox.classList.remove("visible");
+    const boxItem = document.createElement('li');
+    boxItem.classList.add("empty");
+
+
+    boxItem.innerHTML +=
+        `<br><br>
+    Title:${stuff[1].title}<br>
+    Author:${stuff[1].author}<br>
+    Price:${stuff[1].price}<br><br>
+    `;
+
+    totalCost.innerText = "";
+    amount += stuff[1].price;
+    totalCost.innerHTML += `total cost: ${amount} $`;
+    totalCost.innerHTML += `<br>`
+
+    totalAmount.innerText = "";
+    itemsAmount++;
+    totalCost.append("books amount: " + itemsAmount)
+
+    const removeBtn = document.createElement("button");
+    removeBtn.append("remove book");
+    removeBtn.classList.add("removeBtn");
+    boxItem.append(removeBtn);
+
+    const listOfBooks = document.querySelector("ul");
+    removeBtn.addEventListener("click", () => {
+        listOfBooks.removeChild(listOfBooks.childNodes[0])
+
+        totalAmount.innerText = "";
+        itemsAmount--;
+        totalCost.append("books amount: " + itemsAmount)
+
+        totalCost.innerText = "";
+        amount -= stuff[1].price;
+        totalCost.innerHTML += `total cost: ${amount} $`;
+        totalCost.innerHTML += `<br>`
+    })
 
     boxList.append(boxItem);
     boxContainer.append(boxList);
-
-
 })
+
+
+buy[2].addEventListener("click", () => {
+
+    shopBox.classList.remove("visible");
+    const boxItem = document.createElement('li');
+    boxItem.classList.add("empty");
+
+
+    boxItem.innerHTML +=
+        `<br><br>
+    Title:${stuff[2].title}<br>
+    Author:${stuff[2].author}<br>
+    Price:${stuff[2].price}<br><br>
+    `;
+
+    totalCost.innerText = "";
+    amount += stuff[2].price;
+    totalCost.innerHTML += `total cost: ${amount} $`;
+    totalCost.innerHTML += `<br>`
+
+    totalAmount.innerText = "";
+    itemsAmount++;
+    totalCost.append("books amount: " + itemsAmount)
+
+    const removeBtn = document.createElement("button");
+    removeBtn.append("remove book");
+    removeBtn.classList.add("removeBtn");
+    boxItem.append(removeBtn);
+
+    const listOfBooks = document.querySelector("ul");
+    removeBtn.addEventListener("click", () => {
+        listOfBooks.removeChild(listOfBooks.childNodes[0])
+
+        totalAmount.innerText = "";
+        itemsAmount--;
+        totalCost.append("books amount: " + itemsAmount)
+
+        totalCost.innerText = "";
+        amount -= stuff[2].price;
+        totalCost.innerHTML += `total cost: ${amount} $`;
+        totalCost.innerHTML += `<br>`
+    })
+
+    boxList.append(boxItem);
+    boxContainer.append(boxList);
+})
+
+buy[3].addEventListener("click", () => {
+
+    shopBox.classList.remove("visible");
+    const boxItem = document.createElement('li');
+    boxItem.classList.add("empty");
+
+
+    boxItem.innerHTML +=
+        `<br><br>
+    Title:${stuff[3].title}<br>
+    Author:${stuff[3].author}<br>
+    Price:${stuff[3].price}<br><br>
+    `;
+
+    totalCost.innerText = "";
+    amount += stuff[3].price;
+    totalCost.innerHTML += `total cost: ${amount} $`;
+    totalCost.innerHTML += `<br>`
+
+    totalAmount.innerText = "";
+    itemsAmount++;
+    totalCost.append("books amount: " + itemsAmount)
+
+    const removeBtn = document.createElement("button");
+    removeBtn.append("remove book");
+    removeBtn.classList.add("removeBtn");
+    boxItem.append(removeBtn);
+
+    const listOfBooks = document.querySelector("ul");
+    removeBtn.addEventListener("click", () => {
+        listOfBooks.removeChild(listOfBooks.childNodes[0])
+
+        totalAmount.innerText = "";
+        itemsAmount--;
+        totalCost.append("books amount: " + itemsAmount)
+
+        totalCost.innerText = "";
+        amount -= stuff[3].price;
+        totalCost.innerHTML += `total cost: ${amount} $`;
+        totalCost.innerHTML += `<br>`
+    })
+
+    boxList.append(boxItem);
+    boxContainer.append(boxList);
+})
+
+
+buy[4].addEventListener("click", () => {
+
+    shopBox.classList.remove("visible");
+    const boxItem = document.createElement('li');
+    boxItem.classList.add("empty");
+
+
+    boxItem.innerHTML +=
+        `<br><br>
+    Title:${stuff[4].title}<br>
+    Author:${stuff[4].author}<br>
+    Price:${stuff[4].price}<br><br>
+    `;
+
+    totalCost.innerText = "";
+    amount += stuff[4].price;
+    totalCost.innerHTML += `total cost: ${amount} $`;
+    totalCost.innerHTML += `<br>`
+
+    totalAmount.innerText = "";
+    itemsAmount++;
+    totalCost.append("books amount: " + itemsAmount)
+
+    const removeBtn = document.createElement("button");
+    removeBtn.append("remove book");
+    removeBtn.classList.add("removeBtn");
+    boxItem.append(removeBtn);
+
+    const listOfBooks = document.querySelector("ul");
+    removeBtn.addEventListener("click", () => {
+        listOfBooks.removeChild(listOfBooks.childNodes[0])
+
+        totalAmount.innerText = "";
+        itemsAmount--;
+        totalCost.append("books amount: " + itemsAmount)
+
+        totalCost.innerText = "";
+        amount -= stuff[4].price;
+        totalCost.innerHTML += `total cost: ${amount} $`;
+        totalCost.innerHTML += `<br>`
+    })
+
+    boxList.append(boxItem);
+    boxContainer.append(boxList);
+})
+
+buy[5].addEventListener("click", () => {
+
+    shopBox.classList.remove("visible");
+    const boxItem = document.createElement('li');
+    boxItem.classList.add("empty");
+
+
+    boxItem.innerHTML +=
+        `<br><br>
+    Title:${stuff[5].title}<br>
+    Author:${stuff[5].author}<br>
+    Price:${stuff[5].price}<br><br>
+    `;
+
+    totalCost.innerText = "";
+    amount += stuff[5].price;
+    totalCost.innerHTML += `total cost: ${amount} $`;
+    totalCost.innerHTML += `<br>`
+
+    totalAmount.innerText = "";
+    itemsAmount++;
+    totalCost.append("books amount: " + itemsAmount)
+
+    const removeBtn = document.createElement("button");
+    removeBtn.append("remove book");
+    removeBtn.classList.add("removeBtn");
+    boxItem.append(removeBtn);
+
+    const listOfBooks = document.querySelector("ul");
+    removeBtn.addEventListener("click", () => {
+        listOfBooks.removeChild(listOfBooks.childNodes[0])
+
+        totalAmount.innerText = "";
+        itemsAmount--;
+        totalCost.append("books amount: " + itemsAmount)
+
+        totalCost.innerText = "";
+        amount -= stuff[5].price;
+        totalCost.innerHTML += `total cost: ${amount} $`;
+        totalCost.innerHTML += `<br>`
+    })
+
+    boxList.append(boxItem);
+    boxContainer.append(boxList);
+})
+
+
+buy[6].addEventListener("click", () => {
+
+    shopBox.classList.remove("visible");
+    const boxItem = document.createElement('li');
+    boxItem.classList.add("empty");
+
+
+    boxItem.innerHTML +=
+        `<br><br>
+    Title:${stuff[6].title}<br>
+    Author:${stuff[6].author}<br>
+    Price:${stuff[6].price}<br><br>
+    `;
+
+    totalCost.innerText = "";
+    amount += stuff[6].price;
+    totalCost.innerHTML += `total cost: ${amount} $`;
+    totalCost.innerHTML += `<br>`
+
+    totalAmount.innerText = "";
+    itemsAmount++;
+    totalCost.append("books amount: " + itemsAmount)
+
+    const removeBtn = document.createElement("button");
+    removeBtn.append("remove book");
+    removeBtn.classList.add("removeBtn");
+    boxItem.append(removeBtn);
+
+    const listOfBooks = document.querySelector("ul");
+    removeBtn.addEventListener("click", () => {
+        listOfBooks.removeChild(listOfBooks.childNodes[0])
+
+        totalAmount.innerText = "";
+        itemsAmount--;
+        totalCost.append("books amount: " + itemsAmount)
+
+        totalCost.innerText = "";
+        amount -= stuff[6].price;
+        totalCost.innerHTML += `total cost: ${amount} $`;
+        totalCost.innerHTML += `<br>`
+    })
+
+    boxList.append(boxItem);
+    boxContainer.append(boxList);
+})
+
+
+buy[7].addEventListener("click", () => {
+
+    shopBox.classList.remove("visible");
+    const boxItem = document.createElement('li');
+    boxItem.classList.add("empty");
+
+
+    boxItem.innerHTML +=
+        `<br><br>
+    Title:${stuff[7].title}<br>
+    Author:${stuff[7].author}<br>
+    Price:${stuff[7].price}<br><br>
+    `;
+
+    totalCost.innerText = "";
+    amount += stuff[7].price;
+    totalCost.innerHTML += `total cost: ${amount} $`;
+    totalCost.innerHTML += `<br>`
+
+    totalAmount.innerText = "";
+    itemsAmount++;
+    totalCost.append("books amount: " + itemsAmount)
+
+    const removeBtn = document.createElement("button");
+    removeBtn.append("remove book");
+    removeBtn.classList.add("removeBtn");
+    boxItem.append(removeBtn);
+
+    const listOfBooks = document.querySelector("ul");
+    removeBtn.addEventListener("click", () => {
+        listOfBooks.removeChild(listOfBooks.childNodes[0])
+
+        totalAmount.innerText = "";
+        itemsAmount--;
+        totalCost.append("books amount: " + itemsAmount)
+
+        totalCost.innerText = "";
+        amount -= stuff[7].price;
+        totalCost.innerHTML += `total cost: ${amount} $`;
+        totalCost.innerHTML += `<br>`
+    })
+
+    boxList.append(boxItem);
+    boxContainer.append(boxList);
+})
+
+
+buy[8].addEventListener("click", () => {
+
+    shopBox.classList.remove("visible");
+    const boxItem = document.createElement('li');
+    boxItem.classList.add("empty");
+
+
+    boxItem.innerHTML +=
+        `<br><br>
+    Title:${stuff[8].title}<br>
+    Author:${stuff[8].author}<br>
+    Price:${stuff[8].price}<br><br>
+    `;
+
+    totalCost.innerText = "";
+    amount += stuff[8].price;
+    totalCost.innerHTML += `total cost: ${amount} $`;
+    totalCost.innerHTML += `<br>`
+
+    totalAmount.innerText = "";
+    itemsAmount++;
+    totalCost.append("books amount: " + itemsAmount)
+
+    const removeBtn = document.createElement("button");
+    removeBtn.append("remove book");
+    removeBtn.classList.add("removeBtn");
+    boxItem.append(removeBtn);
+
+    const listOfBooks = document.querySelector("ul");
+    removeBtn.addEventListener("click", () => {
+        listOfBooks.removeChild(listOfBooks.childNodes[0])
+
+        totalAmount.innerText = "";
+        itemsAmount--;
+        totalCost.append("books amount: " + itemsAmount)
+
+        totalCost.innerText = "";
+        amount -= stuff[8].price;
+        totalCost.innerHTML += `total cost: ${amount} $`;
+        totalCost.innerHTML += `<br>`
+    })
+
+    boxList.append(boxItem);
+    boxContainer.append(boxList);
+})
+
+
+buy[9].addEventListener("click", () => {
+
+    shopBox.classList.remove("visible");
+    const boxItem = document.createElement('li');
+    boxItem.classList.add("empty");
+
+
+    boxItem.innerHTML +=
+        `<br><br>
+    Title:${stuff[9].title}<br>
+    Author:${stuff[9].author}<br>
+    Price:${stuff[9].price}<br><br>
+    `;
+
+    totalCost.innerText = "";
+    amount += stuff[9].price;
+    totalCost.innerHTML += `total cost: ${amount} $`;
+    totalCost.innerHTML += `<br>`
+
+    totalAmount.innerText = "";
+    itemsAmount++;
+    totalCost.append("books amount: " + itemsAmount)
+
+    const removeBtn = document.createElement("button");
+    removeBtn.append("remove book");
+    removeBtn.classList.add("removeBtn");
+    boxItem.append(removeBtn);
+
+    const listOfBooks = document.querySelector("ul");
+    removeBtn.addEventListener("click", () => {
+        listOfBooks.removeChild(listOfBooks.childNodes[0])
+
+        totalAmount.innerText = "";
+        itemsAmount--;
+        totalCost.append("books amount: " + itemsAmount)
+
+        totalCost.innerText = "";
+        amount -= stuff[9].price;
+        totalCost.innerHTML += `total cost: ${amount} $`;
+        totalCost.innerHTML += `<br>`
+    })
+
+    boxList.append(boxItem);
+    boxContainer.append(boxList);
+})
+
+
+
 
 
 

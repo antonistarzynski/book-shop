@@ -176,3 +176,32 @@ label {
     transition: 0.2s all linear;
 
 }
+
+
+
+.finalBox {
+    width: 500px;
+    height: 500px;
+    position: sticky;
+    top: 20%;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    z-index: 2;
+
+}
+
+.finalh2 {
+    font-size: 2rem;
+    color: black;
+    padding: 1rem;
+
+}
+
+.finalMessage {
+    font-size: 1rem;
+    color: black;
+    padding: 1rem;
+}

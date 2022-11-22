@@ -84,6 +84,33 @@ function checkAll() {
     if (result == must.length) {
         button.classList.remove("btn-inactive");
         button.classList.add("btn");
+
+        const btnActive = document.querySelector(".btn");
+        btnActive.addEventListener("click", (e) => {
+
+            e.preventDefault();
+
+            const finalBox = document.createElement("div");
+            finalBox.classList.add('finalBox');
+            form.append(finalBox);
+
+            const finalh2 = document.createElement('h2');
+            finalh2.append("The order created")
+            finalh2.classList.add('finalh2');
+            finalBox.append(finalh2);
+
+            const finalMessage = document.createElement('h4');
+            finalMessage.append(`The delivery adress is ${adressInput.value} street. House ${houseInput.value}, flat ${flatInput.value}. Customer ${nameInput.value}. Thank You!`);
+            finalMessage.classList.add('finalMessage');
+            finalBox.append(finalMessage);
+
+
+
+
+            console.log(`${nameInput.value}`)
+        })
+
+
     } else {
         button.classList.remove("btn");
         button.classList.add("btn-inactive");
@@ -122,6 +149,9 @@ adressInput.addEventListener("click", (evt) => {
 flatInput.addEventListener("click", (evt) => {
     checkAll();
 });
+
+
+
 
 
 
